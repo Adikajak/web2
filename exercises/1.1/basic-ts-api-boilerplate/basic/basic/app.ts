@@ -1,7 +1,4 @@
 import express, { ErrorRequestHandler } from "express";
-import usersRouter from "./routes/users";
-import pizzaRouter from "./routes/pizzas";
-import drinkRouter from "./routes/drinks";
 import filmRouter from "./routes/films";
 
 const app = express();
@@ -9,9 +6,6 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/users", usersRouter);
-app.use("/pizzas", pizzaRouter);
-app.use("/drink", drinkRouter);
 app.use("/films", filmRouter);
 
 const errorHandler: ErrorRequestHandler = (err, _req, res, _next) => {
